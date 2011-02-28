@@ -21,6 +21,7 @@ pkg
 cscope.files
 cscope.out
 tags
+.rvmrc
 
 ## PROJECT::SPECIFIC
 *.log
