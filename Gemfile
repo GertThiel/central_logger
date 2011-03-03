@@ -3,7 +3,6 @@ source "http://rubygems.org"
 gem "rake"
 gem "bundler", "~> 1.0.0"
 gem "mongo"
-gem "bson_ext"
 
 group :development do
   # adds Bundler support for gemspec generation

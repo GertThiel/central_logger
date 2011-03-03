@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
-    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
@@ -65,7 +64,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rake>, [">= 0"])
       s.add_runtime_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_runtime_dependency(%q<mongo>, [">= 0"])
-      s.add_runtime_dependency(%q<bson_ext>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<i18n>, [">= 0"])
@@ -76,7 +74,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<mongo>, [">= 0"])
-      s.add_dependency(%q<bson_ext>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<i18n>, [">= 0"])
@@ -88,7 +85,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<mongo>, [">= 0"])
-    s.add_dependency(%q<bson_ext>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.0.pre5"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<i18n>, [">= 0"])
