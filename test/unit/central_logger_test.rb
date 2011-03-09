@@ -77,6 +77,14 @@ class CentralLogger::MongoLoggerTest < Test::Unit::TestCase
           assert_equal "#{Rails.env}_log", @central_logger.mongo_collection_name
         end
 
+        should "set the application name when specified in the config file" do
+          assert_equal "central_foo", @central_logger.instance_variable_get(:@application_name)
+        end
+
+        should "set safe insert when specified in the config file" do
+          assert @central_logger.instance_variable_get(:@safe_insert)
+        end
+
         should "use the database name in the config file" do
           assert_equal "system_log", @central_logger.db_configuration['database']
         end
@@ -151,9 +159,14 @@ class CentralLogger::MongoLoggerTest < Test::Unit::TestCase
         assert_equal 1, @collection.find({"application" => self.class.name}).count
       end
 
-      should "not raise an exception when bson-unserializable data is logged" do
+      should "not raise an exception when bson-unserializable data is logged in the :messages key" do
         log(Tempfile.new("foo"))
+        assert_equal 1, @collection.count
+      end
+
+      should "not raise an exception when bson-unserializable data is logged in the :params key" do
         log_params({:foo => Tempfile.new("bar")})
+        assert_equal 1, @collection.count
       end
 
       context "when an exception is raised" do
